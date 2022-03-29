@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0021)http://instagram.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Sophos Block Page -->
+<title>Website Blocked: Blogs &amp; Forums</title>
+
+<style>
+<!--
+body, ul, li { font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#737373;	margin:0; padding:0;}
+a:link, a:visited, a:active { text-decoration: underline; color:#015589;}
+a:hover { text-decoration: none; color:#51A8DE;}
+.content { padding: 20px 15px 15px 40px; width: 500px; margin: 70px auto 6px auto; border: #ebebeb solid 1px;}
+.blocking { border-top: #D52B1E solid 2px; border-bottom: #D52B1E solid 2px;}
+.warning { border-top: #F0AB00 solid 2px; border-bottom: #F0AB00 solid 2px;}
+.message { border-top: #0076C0 solid 2px; border-bottom: #0076C0 solid 2px;}
+.title { font-size: 24px; border-bottom: #ccc solid 1px; padding-bottom:15px; margin-bottom:15px;}
+.details li { list-style: none;	padding: 6px 0;}
+.url { font-style:italic; font-weight: 700; width: 490px; height: 18px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; -o-text-overflow: ellipsis;}
+.combobox { font-size: 11px; color: #737373;}
+#txt_comment { width: 460px;}
+#button { font-size:11px;}
+.buttonHolder { padding-top: 6px;}
+.footer { color: #ccc; font-size: 14px; width: 540px; margin: 0 auto; text-align:right; }
+-->
+</style>
+	<script type="text/javascript">
+
+	var isPreview = false;
+	var isWarn = false;
+   var isComplete = false;
+
+/* <![CDATA[ */
+
+var Browser = {
+    IE:     !!(window.attachEvent && !window.opera),
+    Opera:  !!window.opera,
+    WebKit: navigator.userAgent.indexOf('AppleWebKit/') > -1,
+    Gecko:  navigator.userAgent.indexOf('Gecko') > -1 && navigator.userAgent.indexOf('KHTML') == -1,
+    MobileSafari: !!navigator.userAgent.match(/Apple.*Mobile.*Safari/)
+};
+window.onload = function() {
+   showButtons(); // Show buttons only if javascript is enabled 
+}
+
+function showButtons() {
+   var returnContent = document.getElementById('return_content');
+   var feedbackContent = document.getElementById('feedback_content');
+   if (returnContent) {
+       returnContent.style.display = "";
+   }
+   if (feedbackContent) {
+       feedbackContent.style.display = "";
+   };
+}
+
+    function submitForm(aForm) {
+	if (isPreview)
+	    return false;
+	aForm.submit();
+    }
+
+    function goBackFromSubmit() {
+	if (isPreview)
+	    return false;
+        doGoBack(-2);
+    }
+    
+    function goBack() {
+	if (isPreview)
+	    return false;
+        doGoBack(-1);
+    }
+
+    function doGoBack(i) {
+	if (isPreview)
+	    return false;
+
+	history_length = history.length;
+	if (Browser.IE) {
+		history_length = history_length + 1;
+	}
+	if(history_length > i*(-1)) {
+	    history.go(i);
+	} else {
+            window.location = 'about:blank';
+	}
+
+	return false;
+    }
+
+   function showFeedback() {
+		if (isPreview)
+	        return false;
+		document.getElementById('main_block').style.display="none";
+		document.getElementById('request_feedback_block').style.display="none";
+		var msgTitle = document.getElementById('msg_title');
+		if(msgTitle)
+			msgTitle.innerHTML = "Submit request";
+		document.getElementById('feedback_report').style.display="";
+    }
+
+    function submitFeedback() {
+	submitForm(document.getElementById('form_report'));
+    }
+
+/* ]]> */
+</script>		
+
+
+</head>
+<body>
+<div class="content blocking">
+  <div class="title" id="msg_title">Website Blocked</div>
+  <div style="display: none;" id="selectedMenuItem">UsrViewBlocked_policy</div>
+  <ul class="details">
+    <div id="main_block">
+      <div id="msg_threat_source">
+        <li class="url">Location: instagram.com</li>
+      </div>
+      <div id="pageType" style="display: none;">BLOCK_CATEGORY</div>
+      <div id="categoryId" style="display: none;">5</div>
+      <div id="msg_long_reason">
+        <li>Your organization's policy prohibits access to websites categorized as Blogs &amp; Forums.</li>
+      </div>
+      <div id="return_content" style="">
+        <li><span id="msg_return_to_previous">Return to the page you were previously viewing.</span></li>
+        <li><input type="button" onclick="goBack();" id="lnk_return" value="Return to previous page"></li>
+      </div>
+    </div>
+    <div id="feedback_report" style="display: none;">
+      <form action="http://instagram.com/171E92C18EEE40A29D1749C505091DFC_SOPHOS_SUBMIT_FEEDBACK" method="POST" id="form_report" name="form_report">
+        <input type="hidden" name="FEEDBACK_KEY_REQUESTED_URL" value="aHR0cDovL2luc3RhZ3JhbS5jb20v">
+        <input type="hidden" name="FEEDBACK_KEY_CLIENT_IP" value="10.58.212.52">
+        <input type="hidden" name="FEEDBACK_KEY_CATEGORY_ID" value="5">
+        <input type="hidden" name="FEEDBACK_KEY_RULE_ID" value="811146314">
+        <input type="hidden" name="FEEDBACK_KEY_TYPE" value="site">
+        <input type="hidden" name="FEEDBACK_KEY_POLICY_NAME" value="[Base Policy]">
+        <input type="hidden" name="FEEDBACK_KEY_TAG_ID" value="">
+        <li>To request access to this site, enter a comment below, and click Submit request.</li>
+        <li><input id="txt_comment" name="FEEDBACK_KEY_COMMENT" type="text" maxlength="159"></li>
+        <li>If you believe this site does not belong to the Blogs &amp; Forums category, tell us what category you believe this site belongs to.</li>
+        <li>
+          <select id="sb_category" name="FEEDBACK_KEY_SUGGESTED_CATEGORY_ID">
+		     <option selected="selected" value="0">No category change</option>
+<option value="1">Adult/Sexually Explicit</option>
+<option value="2">Advertisements &amp; Pop-Ups</option>
+<option value="3">Alcohol &amp; Tobacco</option>
+<option value="4">Arts</option>
+<option value="5">Blogs &amp; Forums</option>
+<option value="6">Business</option>
+<option value="7">Chat</option>
+<option value="8">Computing &amp; Internet</option>
+<option value="9">Criminal Activity</option>
+<option value="55">Custom</option>
+<option value="10">Downloads</option>
+<option value="11">Education</option>
+<option value="12">Entertainment</option>
+<option value="13">Fashion &amp; Beauty</option>
+<option value="14">Finance &amp; Investment</option>
+<option value="15">Food &amp; Dining</option>
+<option value="16">Gambling</option>
+<option value="17">Games</option>
+<option value="18">Government</option>
+<option value="19">Hacking</option>
+<option value="20">Health &amp; Medicine</option>
+<option value="21">Hobbies &amp; Recreation</option>
+<option value="22">Hosting Sites</option>
+<option value="23">Illegal Drugs</option>
+<option value="24">Infrastructure</option>
+<option value="25">Intimate Apparel &amp; Swimwear</option>
+<option value="26">Intolerance &amp; Hate</option>
+<option value="27">Job Search &amp; Career Development</option>
+<option value="28">Kid's Sites</option>
+<option value="29">Motor Vehicles</option>
+<option value="30">News</option>
+<option value="31">Peer-to-Peer</option>
+<option value="32">Personals and Dating</option>
+<option value="33">Philanthropic &amp; Professional Orgs.</option>
+<option value="34">Phishing &amp; Fraud</option>
+<option value="35">Photo Searches</option>
+<option value="36">Politics</option>
+<option value="37">Proxies &amp; Translators</option>
+<option value="38">Real Estate</option>
+<option value="39">Reference</option>
+<option value="40">Religion</option>
+<option value="41">Ringtones/Mobile Phone Downloads</option>
+<option value="42">Search Engines</option>
+<option value="43">Sex Education</option>
+<option value="44">Shopping</option>
+<option value="45">Society &amp; Culture</option>
+<option value="46">Spam URLs</option>
+<option value="47">Sports</option>
+<option value="48">Spyware</option>
+<option value="49">Streaming Media</option>
+<option value="50">Tasteless &amp; Offensive</option>
+<option value="51">Travel</option>
+<option value="52">Violence</option>
+<option value="53">Weapons</option>
+<option value="54">Web-based E-mail</option>
+          </select>
+        </li>
+      </form>
+      <li><input type="button" onclick="submitFeedback();" id="lnk_submit_feedback" value="Submit request"></li>
+    </div>
+    <div id="feedback_content" style="">
+      <div id="request_feedback_block" style="display:none;">
+        <li><span id="msg_request_access">If you believe you have a valid reason to visit this site, submit a request to your administrator for access to this site.</span></li>
+        <li><input type="button" onclick="showFeedback();" id="lnk_request_access" value="Submit request"></li>
+      </div>
+    </div>
+  </ul>
+</div>
+<div class="footer">sophos <b>web protection</b></div>
+
+
+</body></html>
